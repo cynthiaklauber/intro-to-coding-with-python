@@ -46,45 +46,37 @@ Python 2 and Python 3 are not equivalent. We'll be using Python 3. Your computer
 
 This is the best way (that I know of) to install python 3. This method is recommended by [this blogpost](https://opensource.com/article/19/5/python-3-default-mac#what-we-should-do).
 
-1. Open the terminal
+Conceptually we are using a package manager (`brew`) to install what is essentially a package manager (`pyenv`) which we'll use to install a specific version of Python.
+
+1. Install `brew`
+    1. Open the terminal
+    1. Run the following command: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+    1. You may need to enable or install Xcode
 1. Use `brew` to install `pyenv`
-    1. Run `brew install pyenv`
-    1. If this does not work or returns something like `-bash: brew: command not found` then you may need to try to install `brew`. See [Installing Homebrew section](#installing-homebrew) below.
+    1. Run the following command `brew install pyenv`
 1. Use `pyenv` to install python 3
-    1. Run `pyenv install 3.7.4`..
+    1. Run `pyenv install 3.8`
 1. Now that Python 3 is installed through pyenv, we want to set it as our global default version for pyenv environments
-    1. Run `pyenv global 3.7.4`
+    1. Run `pyenv global 3.8`
     1. Verify that it worked
         1. Run `pyenv version`
-1. Now follow the instructions in the section [Creating a Bash Profile](#creating-a-bash-profile)
-    1. When that's done continue with the instructions here
-1. Close the terminal and open again (if you didn't already as a part of the above instructions)
+1. Copy/download the files `bashrc` and `bash_profile` into your home directory
+    1. Run the following:
+        ```sh
+        if [ -s "~/.bashrc" ]; then echo "You already have a .bashrc file in your home directory"; else curl https://gist.githubusercontent.com/bcope/3733714df0615813c2eca685de1106c4/raw/10d76dc7dff3708c465327e68bce5eac272e18bd/bashrc_template.sh >> ~/.bashrc; fi; if [ -s "~/.bash_profile" ]; then echo "You already have a .bash_profile file in your home directory"; else curl https://gist.githubusercontent.com/bcope/462d6ea91964f6be6aef3d8f840c369b/raw/43c6fd77ae47d48f22440ba9ac056f98bb38651b/bash_profile_template.sh >> ~/.bash_profile; fi
+        ```
+1. Close the terminal and open again
 1. Verify that primary version of python is being run by pyenv
     1. Run `which python`
     1. You should see something like `/Users/<your-username>/.pyenv/shims/python`. The important part is the `.pyenv` in the middle
 1. Verify the python version
-    1. Run `python --version`. It should be 3.7.4
+    1. Run `python --version`. It should be 3.8
 1. Verify the pip version
     1. Run `pip --version`
-    1. You should see something like `pip 19.0.3 from /Users/<your-username>/.pyenv/versions/3.7.3/lib/python3.7/site-packages/pip (python 3.7)`
+    1. You should see something like `pip 19.0.3 from /Users/<your-username>/.pyenv/versions/3.8/lib/python3.8/site-packages/pip (python 3.8)`
 1. Check to see if git is installed
     1. Run `git --version`
     1. If not, try installing using brew: `brew install git`
-
-#### The manual method
-
-Alternate install method for older operating systems
-
-1. Download [python 3](https://www.python.org/ftp/python/3.7.4/python-3.7.4-macosx10.9.pkg)
-1. Double click to install and follow the prompts <!-- TODO: this needs verfication and more instructions -->
-
-#### Other install instructions
-
-##### Installing Homebrew
-
-1. You may need to enable or install Xcode <!-- TODO: need to add more instructions here -->
-1. Install `brew` by running the following `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-    - It is possible that your operating system is too old to support Homebrew. If this is the case, ...<!-- TODO: need to add section to handle this -->
 
 ### PC
 
@@ -96,7 +88,7 @@ Alternate install method for older operating systems
     1. Run `python --version`
 1. Install python 3 if necessary
     1. Download python 3
-    1. From here we’ll be learning together <!-- TODO: replace with useful instructions -->
+    1. Make sure to check the box that adds Python 3 to your path.
 
 ### Chromebook
 
@@ -136,7 +128,7 @@ Full disclosure, I have no idea if this workshop will be able to be done locally
 ## Concepts
 
 - Command line
-  - Navigation using cd
-  - Creating directories with mkdir
+  - Navigation using `cd`
+  - Creating directories with `mkdir`
 - Pip
   - Used to install python specific libraries
