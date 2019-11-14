@@ -21,7 +21,7 @@
 
 The goal for today is to muscle through the dirty work of installing requirements and produce a runnable program.
 
-You will hear things you don’t understand yet. You will need to get comfortable with semi- or non-understandings. In this session we will quickly perform some tasks without a thorough explanation. This is in order to get to the fun part quickly and not get bogged down. 
+You will hear things you don’t understand yet. You will need to get comfortable with semi- or non-understandings. In this session we will quickly perform some tasks without a thorough explanation. This is in order to get to the fun part quickly and not get bogged down.
 
 Write down any questions you have and we can get back to them later.
 
