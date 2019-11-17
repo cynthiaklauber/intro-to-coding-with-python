@@ -155,16 +155,16 @@ Full disclosure, I have no idea if this workshop will be able to be done locally
     - If for some reason VSCode is not an option, then [Atom](https://atom.io/) is a great alternative.
 1. Install VSCode plugins
     1. `Atom Keymap` - `ms-vscode.atom-keybindings` I'll be using this so I recommend that you install it as well. Feel free to move away from it whenever you start getting comfortable.
-    1. `markdownlint` - `davidanson.vscode-markdownlint`
     1. `Python` - `ms-python.python`
     1. `vscode-icons` - `vscode-icons-team.vscode-icons`
+    1. `markdownlint` - `davidanson.vscode-markdownlint`
     1. `YAML` - `redhat.vscode-yaml`
     1. `Live Share` - `ms-vsliveshare.vsliveshare`
     1. `Calculate` - `acarreiro.calculate` - This is not at all necessary for our workshop but I really love this plugin.
     <!-- 1. `Docker` - `ms-azuretools.vscode-docker` -->
     <!-- 1. `MySQL Syntax` - `jakebathman.mysql-syntax` -->
 
-## Execises
+## Exercises
 
 1. Create some folders
     1. In the terminal create a directory for us to store all our code
