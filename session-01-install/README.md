@@ -50,33 +50,81 @@ Conceptually we are using a package manager (`brew`) to install what is essentia
 
 1. Install `brew`
     1. Open the terminal
-    1. Run the following command: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-    1. You may need to enable or install Xcode
-1. Use `brew` to install `pyenv`
-    1. Run the following command `brew install pyenv`
-1. Use `pyenv` to install python 3
-    1. Run `pyenv install 3.8`
-1. Now that Python 3 is installed through pyenv, we want to set it as our global default version for pyenv environments
-    1. Run `pyenv global 3.8`
-    1. Verify that it worked
-        1. Run `pyenv version`
-1. Copy/download the files `bashrc` and `bash_profile` into your home directory
-    1. Run the following:
+    1. Run the following command:
+
+    ```sh
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ```
+
+    - You may need to enable or install Xcode
+1. Use `brew` to install `pyenv`:
+
+    ```sh
+    brew install pyenv
+    ```
+
+1. Use `pyenv` to install python 3. Here we're installing 3.8 but any version >= 3.5 is fine.
+
+    ```sh
+    pyenv install 3.8.0
+    ```
+
+1. Now that Python 3 is installed through pyenv, we want to set it as our global default version for pyenv environments:
+
+    ```sh
+    pyenv global 3.8.0
+    ```
+
+    1. Verify that it worked:
+
         ```sh
-        if [ -s "~/.bashrc" ]; then echo "You already have a .bashrc file in your home directory"; else curl https://gist.githubusercontent.com/bcope/3733714df0615813c2eca685de1106c4/raw/10d76dc7dff3708c465327e68bce5eac272e18bd/bashrc_template.sh >> ~/.bashrc; fi; if [ -s "~/.bash_profile" ]; then echo "You already have a .bash_profile file in your home directory"; else curl https://gist.githubusercontent.com/bcope/462d6ea91964f6be6aef3d8f840c369b/raw/43c6fd77ae47d48f22440ba9ac056f98bb38651b/bash_profile_template.sh >> ~/.bash_profile; fi
+        pyenv version
         ```
+
+        - You should see something like:
+
+            ```sh
+            3.8.0 (set by /Users/<your_username>/.pyenv/version)
+            ```
+
+1. Copy/download the files `bashrc` and `bash_profile` into your home directory. This command will only run if you don't already have a `.bashrc` and/or a `.bash_profile` in your home directory.
+
+    ```sh
+    if [ -s ~/.bashrc ]; then echo "You already have a .bashrc file in your home directory"; else curl https://gist.githubusercontent.com/bcope/3733714df0615813c2eca685de1106c4/raw/10d76dc7dff3708c465327e68bce5eac272e18bd/bashrc_template.sh >> ~/.bashrc; fi; if [ -s ~/.bash_profile ]; then echo "You already have a .bash_profile file in your home directory"; else curl https://gist.githubusercontent.com/bcope/462d6ea91964f6be6aef3d8f840c369b/raw/43c6fd77ae47d48f22440ba9ac056f98bb38651b/bash_profile_template.sh >> ~/.bash_profile; fi
+    ```
+
 1. Close the terminal and open again
 1. Verify that primary version of python is being run by pyenv
-    1. Run `which python`
-    1. You should see something like `/Users/<your-username>/.pyenv/shims/python`. The important part is the `.pyenv` in the middle
-1. Verify the python version
-    1. Run `python --version`. It should be 3.8
+
+    ```sh
+    which python
+    ```
+
+    - You should see something like `/Users/<your-username>/.pyenv/shims/python`. The important part is the `.pyenv` in the middle
+1. Verify the python version. It should be 3.8
+
+    ```sh
+    python --version
+    ```
+
 1. Verify the pip version
-    1. Run `pip --version`
-    1. You should see something like `pip 19.0.3 from /Users/<your-username>/.pyenv/versions/3.8/lib/python3.8/site-packages/pip (python 3.8)`
-1. Check to see if git is installed
-    1. Run `git --version`
-    1. If not, try installing using brew: `brew install git`
+
+    ```sh
+    pip --version
+    ```
+
+    - You should see something like `pip 19.0.3 from /Users/<your-username>/.pyenv/versions/3.8/lib/python3.8/site-packages/pip (python 3.8)`
+1. Check to see if git is installed. The specific version doesn't really matter but we must want to make sure that it is installed at all.
+
+    ```sh
+    git --version
+    ```
+
+    1. If not, try installing using brew:
+
+        ```sh
+        brew install git
+        ```
 
 ### PC
 
@@ -99,9 +147,25 @@ Full disclosure, I have no idea if this workshop will be able to be done locally
 1. Possible next step...
     1. https://www.wsvincent.com/install-python3-chromebook/
 
-## Cross Platform Instructions
+## Cross Platform Install Instructions
+
+### VSCode
 
 1. Install VSCode if you haven't already
+    - If for some reason VSCode is not an option, then [Atom](https://atom.io/) is a great alternative.
+1. Install VSCode plugins
+    1. `Atom Keymap` - `ms-vscode.atom-keybindings` I'll be using this so I recommend that you install it as well. Feel free to move away from it whenever you start getting comfortable.
+    1. `markdownlint` - `davidanson.vscode-markdownlint`
+    1. `Python` - `ms-python.python`
+    1. `vscode-icons` - `vscode-icons-team.vscode-icons`
+    1. `YAML` - `redhat.vscode-yaml`
+    1. `Live Share` - `ms-vsliveshare.vsliveshare`
+    1. `Calculate` - `acarreiro.calculate` - This is not at all necessary for our workshop but I really love this plugin.
+    <!-- 1. `Docker` - `ms-azuretools.vscode-docker` -->
+    <!-- 1. `MySQL Syntax` - `jakebathman.mysql-syntax` -->
+
+## Execises
+
 1. Create some folders
     1. In the terminal create a directory for us to store all our code
         1. Run `mkdir ~/git`
@@ -113,17 +177,6 @@ Full disclosure, I have no idea if this workshop will be able to be done locally
     1. Run `pip install jupyter`
 1. Write hello world program in a Jupyter Notebook <!-- TODO: put instructions here -->
 1. Write hello world program in VSCode <!-- TODO: put instructions here -->
-
-## Bonus
-
-1. Try updating the terminal to look the way you want
-1. Install plugins for VSCode
-    1. Atom Keymap - I recommend this so that we can be using the same keyboard shortcuts
-    1. Live Share - this could come in handy later
-    1. Python - syntax highlighting etc
-    1. vscode-icons - makes files easier to differentiate by type
-
-## Questions
 
 ## Concepts
 
