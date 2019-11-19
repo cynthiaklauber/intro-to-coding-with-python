@@ -50,3 +50,7 @@
   - loops
     - for loops
   - how to use documentation
+  - explain basic HTTP
+    - client
+    - server
+    
