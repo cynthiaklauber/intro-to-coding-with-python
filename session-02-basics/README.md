@@ -14,3 +14,5 @@
   - loop over a function
 - builtin functions
 - get your hands dirty solving somewhat complex problems
+
+- bullet points?
